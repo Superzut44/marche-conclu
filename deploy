@@ -1,0 +1,4 @@
+#!/bin/sh
+npm run build
+rsync -av ./ rhis0922@chavaudreyxavier.fr:~/marcheconclu --include=public/build --include=public/.htaccess --exclude-from=.gitignore --exclude=".*"
+ssh rhis0922@chavaudreyxavier.fr 'cd ~/marcheconclu && php bin/console cache:clear'
